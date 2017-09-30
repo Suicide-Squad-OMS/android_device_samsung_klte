@@ -32,9 +32,8 @@
 #include <stdio.h>
 
 #include <android-base/properties.h>
-#include "vendor_init.h"
 #include "property_service.h"
-
+#include "vendor_init.h"
 #include "log.h"
 
 #include "init_msm8974.h"
@@ -140,5 +139,6 @@ void init_target_properties()
     }
 
     std::string device = GetProperty("ro.product.device", "");
-    LOG(INFO) << "Found bootloader id " << bootloader.c_str() << " setting build properties for " << device.c_str() << " device\n";
+    LOG(INFO) << "Found bootloader id " << bootloader <<  " setting build properties for "
+	    << device <<  " device" << std::endl;
 }
