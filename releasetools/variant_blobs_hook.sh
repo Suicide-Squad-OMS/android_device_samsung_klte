@@ -1,5 +1,4 @@
 #
-# Copyright (C) 2014-2016 The CyanogenMod Project
 # Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,14 +14,10 @@
 # limitations under the License.
 #
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-$(call inherit-product, device/samsung/klte/full_klte.mk)
-
-PRODUCT_DEVICE := klte
-PRODUCT_NAME := lineage_klte
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT="samsung/kltexx/klte:6.0.1/MMB29M/G900FXXS1CQI4:user/release-keys" \
-    PRIVATE_BUILD_DESC="kltexx-user 6.0.1 MMB29M G900FXXS1CQI4 release-keys"
-
+case $BOOTLOADER in
+  G900R*)      VARIANT="usc" ;;
+  G900V*)      VARIANT="vzw" ;;
+  S902L*)      VARIANT="vzw" ;;
+  *)           VARIANT="gsm" ;;
+esac

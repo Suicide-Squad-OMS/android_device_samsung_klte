@@ -23,7 +23,8 @@ TARGET_KERNEL_CONFIG := lineage_klte_pn547_defconfig
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm8974
-TARGET_LIBINIT_MSM8974_DEFINES_FILE := device/samsung/klte/init/init_klte.cpp
+#TARGET_LIBINIT_MSM8974_DEFINES_FILE := device/samsung/klte/init/init_klte.cpp
+
 
 # NFC
 BOARD_NFC_CHIPSET := pn547
@@ -34,6 +35,11 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 524288000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 15728640
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2548039680
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 12442369024 # 12442385408 - 16384
+
+
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/klte-common/releasetools
+
 
 # inherit from the proprietary version
 -include vendor/samsung/klte/BoardConfigVendor.mk
